@@ -50,7 +50,7 @@ class GridBlock {
 }
 
 
-export default function generateGrid(mapType, rows = 15, cols = 36, mapGrid = []) {
+export default function generateGrid(mapType, rows = 64, cols = 64, mapGrid = []) {
     switch (mapType) {
         case "riverInTheMiddle":
             for (let i = 0; i < rows; i++) {

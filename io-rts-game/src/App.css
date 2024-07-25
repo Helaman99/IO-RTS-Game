@@ -1,10 +1,30 @@
 .App {
-    text-align: center;
+}
+
+.scroll-zone {
+    position: fixed;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: large;
+}
+.scroll-zone:hover, .scroll-zone:active {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+@media only screen and (max-width: 1024px) {
+    .scroll-zone {
+        color: transparent;
+    }
+    .scroll-zone:hover, .scroll-zone:active {
+        background-color: transparent;
+    }
 }
 
 .map {
     display: flex;
     flex-direction: column;
+    width: 2560px;
+    height: 2560px;
 }
 .row {
     display: flex;
