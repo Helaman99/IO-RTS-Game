@@ -7,7 +7,7 @@ export default class GameManager extends React.Component {
     constructor(props) {
         super(props);
         if (!instance) { 
-            instance = this; 
+            instance = this;
             this.state = { mapGrid: generateGrid('riverInTheMiddle') };
         }
         return instance;
@@ -15,13 +15,9 @@ export default class GameManager extends React.Component {
 
     handleBlockClick(rowIndex, colIndex) {
         console.log(`Block clicked at row ${rowIndex}, column ${colIndex}`);
-        console.log(`terrainType: ${this.state.mapGrid[rowIndex][colIndex].terrainType}`);
-        console.log(`occupant: ${this.state.mapGrid[rowIndex][colIndex].occupant}`);
-        console.log(`destroyable: ${this.state.mapGrid[rowIndex][colIndex].destroyable}`);
-        console.log(`traversable: ${this.state.mapGrid[rowIndex][colIndex].traversable}`);
-        console.log(`health: ${this.state.mapGrid[rowIndex][colIndex].health}`);
         this.state.mapGrid[rowIndex][colIndex].selectOccupant();
-    }    
+        this.props.displayBlockDetails(this.state.mapGrid[rowIndex][colIndex]);
+    }
     
     renderMap() {
         const { mapGrid } = this.state;
